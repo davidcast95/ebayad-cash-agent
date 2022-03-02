@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "418017444359-3dbc9ri41f0sdn8j0rfr3o9u3nuc1bai.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.das.cashagent",
+            "certificate_hash": "6eab29e4a0e53453d24bc02e89c822bc176b39a3"
+          }
+        },
+        {
           "client_id": "418017444359-oi37qk7j4tho10l5ar9i9q3sukq6eo8n.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
