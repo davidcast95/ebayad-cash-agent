@@ -1,0 +1,114 @@
+{
+  "project_info": {
+    "project_number": "418017444359",
+    "project_id": "ebayad-ad4ec",
+    "storage_bucket": "ebayad-ad4ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418017444359:android:10d0ab1fb8e814cb1220a2",
+        "android_client_info": {
+          "package_name": "com.das.cashagent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418017444359-oi37qk7j4tho10l5ar9i9q3sukq6eo8n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.das.cashagent",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "418017444359-15j0hmeftml2qi1snhul9smd9hvqmeer.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv1vsZTeXnfjf0ypAGa2LFK8xSo6dKsxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418017444359-15j0hmeftml2qi1snhul9smd9hvqmeer.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "418017444359-pn90qepqfi8gb2cbmb3tqa1r6sdmi890.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.das.cashagent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418017444359:android:11bd7d8f9eee70681220a2",
+        "android_client_info": {
+          "package_name": "com.das.emoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418017444359-076qndn46lkc3n2ftrvk5c1drsr2t5c2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.das.emoney",
+            "certificate_hash": "be2e13e6c133f5f1a62f15f5bed8e41cb42afabd"
+          }
+        },
+        {
+          "client_id": "418017444359-9uobhulkfhgedlbc72842vkm2gpqcss2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.das.emoney",
+            "certificate_hash": "3fc1f227f87149efefafed88fd916e862cba4239"
+          }
+        },
+        {
+          "client_id": "418017444359-d3hpbh2fd0th2nbu5kce9l9gf5gbu83m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.das.emoney",
+            "certificate_hash": "6eab29e4a0e53453d24bc02e89c822bc176b39a3"
+          }
+        },
+        {
+          "client_id": "418017444359-15j0hmeftml2qi1snhul9smd9hvqmeer.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv1vsZTeXnfjf0ypAGa2LFK8xSo6dKsxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418017444359-15j0hmeftml2qi1snhul9smd9hvqmeer.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "418017444359-pn90qepqfi8gb2cbmb3tqa1r6sdmi890.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.das.cashagent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
