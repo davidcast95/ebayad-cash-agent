@@ -749,64 +749,63 @@ class _HomepageWidgetState extends State<HomepageWidget>
                         height: 20,
                         decoration: BoxDecoration(),
                       ),
-                    if (!(FFAppState().isRestricted) ?? true)
-                      Align(
-                        alignment: AlignmentDirectional(-1, 0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'My Balance',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Source Sans Pro',
-                                      color:
-                                          FlutterFlowTheme.of(context).platinum,
-                                    ),
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    '₱ ',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Source Sans Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .platinum,
-                                        ),
+                    Align(
+                      alignment: AlignmentDirectional(-1, 0),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'My Balance',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Source Sans Pro',
+                                    color:
+                                        FlutterFlowTheme.of(context).platinum,
                                   ),
-                                  Text(
-                                    valueOrDefault<String>(
-                                      formatNumber(
-                                        stackUsersRecord.currentBalance,
-                                        formatType: FormatType.decimal,
-                                        decimalType: DecimalType.automatic,
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '₱ ',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Source Sans Pro',
+                                        color: FlutterFlowTheme.of(context)
+                                            .platinum,
                                       ),
-                                      '0',
+                                ),
+                                Text(
+                                  valueOrDefault<String>(
+                                    formatNumber(
+                                      stackUsersRecord.currentBalance,
+                                      formatType: FormatType.decimal,
+                                      decimalType: DecimalType.automatic,
                                     ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .title3
-                                        .override(
-                                          fontFamily: 'Source Sans Pro',
-                                          color: FlutterFlowTheme.of(context)
-                                              .orangePeel,
-                                          fontWeight: FontWeight.bold,
-                                          lineHeight: 1,
-                                        ),
+                                    '0',
                                   ),
-                                ],
-                              ),
-                            ],
-                          ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .title3
+                                      .override(
+                                        fontFamily: 'Source Sans Pro',
+                                        color: FlutterFlowTheme.of(context)
+                                            .orangePeel,
+                                        fontWeight: FontWeight.bold,
+                                        lineHeight: 1,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
                       ),
+                    ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
                       child: Container(
