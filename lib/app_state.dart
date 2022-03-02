@@ -29,7 +29,7 @@ class FFAppState {
     prefs.setBool('ff_isMerchant', _value);
   }
 
-  bool _isRestricted = false;
+  bool _isRestricted = true;
   bool get isRestricted => _isRestricted;
   set isRestricted(bool _value) {
     _isRestricted = _value;

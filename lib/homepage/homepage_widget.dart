@@ -1182,6 +1182,194 @@ class _HomepageWidgetState extends State<HomepageWidget>
                       ),
                     ),
                   ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 250, 0, 0),
+                  child: Container(
+                    width: double.infinity,
+                    height: double.infinity,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).platinum,
+                    ),
+                    child: FutureBuilder<List<TopupTransactionRecord>>(
+                      future: queryTopupTransactionRecordOnce(
+                        queryBuilder: (topupTransactionRecord) =>
+                            topupTransactionRecord
+                                .where('cash_agent',
+                                    isEqualTo: currentUserReference)
+                                .orderBy('created_time', descending: true),
+                      ),
+                      builder: (context, snapshot) {
+                        // Customize what your widget looks like when it's loading.
+                        if (!snapshot.hasData) {
+                          return Center(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: SpinKitFadingFour(
+                                color: FlutterFlowTheme.of(context).orangePeel,
+                                size: 50,
+                              ),
+                            ),
+                          );
+                        }
+                        List<TopupTransactionRecord>
+                            listViewTopupTransactionRecordList = snapshot.data;
+                        return ListView.builder(
+                          padding: EdgeInsets.zero,
+                          scrollDirection: Axis.vertical,
+                          itemCount: listViewTopupTransactionRecordList.length,
+                          itemBuilder: (context, listViewIndex) {
+                            final listViewTopupTransactionRecord =
+                                listViewTopupTransactionRecordList[
+                                    listViewIndex];
+                            return Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(20, 6, 20, 6),
+                              child: Container(
+                                width: double.infinity,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .tertiaryColor,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 2,
+                                      color: Color(0x2A000000),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          15, 12, 15, 12),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Topup',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Source Sans Pro',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .oxfordBlue,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    6, 0, 0, 0),
+                                            child: Text(
+                                              dateTimeFormat(
+                                                  'relative',
+                                                  listViewTopupTransactionRecord
+                                                      .createdTime),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Source Sans Pro',
+                                                        color:
+                                                            Color(0xFF747474),
+                                                        fontSize: 12,
+                                                      ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Divider(
+                                      height: 1,
+                                      thickness: 1,
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(15, 0, 15, 0),
+                                              child: Text(
+                                                'Cash agent',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Source Sans Pro',
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          lineHeight: 2,
+                                                        ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(15, 0, 15, 12),
+                                              child: Text(
+                                                listViewTopupTransactionRecord
+                                                    .cashAgentDisplayName,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Source Sans Pro',
+                                                          color:
+                                                              Color(0xFF747474),
+                                                          lineHeight: 1,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        Expanded(
+                                          child: Align(
+                                            alignment:
+                                                AlignmentDirectional(1, 0),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(0, 0, 20, 0),
+                                              child: Text(
+                                                '₱ ${listViewTopupTransactionRecord.grandTotal.toString()}',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Source Sans Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .orangePeel,
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                  ),
+                ),
               ],
             );
           },

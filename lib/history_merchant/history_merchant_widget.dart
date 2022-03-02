@@ -120,12 +120,12 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
-                  child: FutureBuilder<List<MerchantTransactionRecord>>(
-                    future: queryMerchantTransactionRecordOnce(
-                      queryBuilder: (merchantTransactionRecord) =>
-                          merchantTransactionRecord
-                              .where('merchant',
-                                  isEqualTo: stackMerchantsRecord.reference)
+                  child: FutureBuilder<List<TopupTransactionRecord>>(
+                    future: queryTopupTransactionRecordOnce(
+                      queryBuilder: (topupTransactionRecord) =>
+                          topupTransactionRecord
+                              .where('cash_agent',
+                                  isEqualTo: currentUserReference)
                               .orderBy('created_time', descending: true),
                     ),
                     builder: (context, snapshot) {
@@ -142,16 +142,15 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                           ),
                         );
                       }
-                      List<MerchantTransactionRecord>
-                          listViewMerchantTransactionRecordList = snapshot.data;
+                      List<TopupTransactionRecord>
+                          listViewTopupTransactionRecordList = snapshot.data;
                       return ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
-                        itemCount: listViewMerchantTransactionRecordList.length,
+                        itemCount: listViewTopupTransactionRecordList.length,
                         itemBuilder: (context, listViewIndex) {
-                          final listViewMerchantTransactionRecord =
-                              listViewMerchantTransactionRecordList[
-                                  listViewIndex];
+                          final listViewTopupTransactionRecord =
+                              listViewTopupTransactionRecordList[listViewIndex];
                           return Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(20, 6, 20, 6),
@@ -179,7 +178,7 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
-                                          'Pay Merchant',
+                                          'Topup',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyText1
                                               .override(
@@ -197,7 +196,7 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                           child: Text(
                                             dateTimeFormat(
                                                 'relative',
-                                                listViewMerchantTransactionRecord
+                                                listViewTopupTransactionRecord
                                                     .createdTime),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
@@ -205,18 +204,6 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                                   fontFamily: 'Source Sans Pro',
                                                   color: Color(0xFF747474),
                                                   fontSize: 12,
-                                                ),
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Text(
-                                            '#${listViewMerchantTransactionRecord.id}',
-                                            textAlign: TextAlign.end,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Source Sans Pro',
-                                                  fontSize: 14,
                                                 ),
                                           ),
                                         ),
@@ -240,7 +227,7 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     15, 0, 15, 0),
                                             child: Text(
-                                              'Merchant',
+                                              'Cash agent',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
@@ -258,8 +245,8 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     15, 0, 15, 12),
                                             child: Text(
-                                              listViewMerchantTransactionRecord
-                                                  .businessName,
+                                              listViewTopupTransactionRecord
+                                                  .cashAgentDisplayName,
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
@@ -282,13 +269,7 @@ class _HistoryMerchantWidgetState extends State<HistoryMerchantWidget> {
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0, 0, 20, 0),
                                             child: Text(
-                                              '₱ ${formatNumber(
-                                                listViewMerchantTransactionRecord
-                                                    .amount,
-                                                formatType: FormatType.decimal,
-                                                decimalType:
-                                                    DecimalType.automatic,
-                                              )}',
+                                              '₱ ${listViewTopupTransactionRecord.grandTotal.toString()}',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1

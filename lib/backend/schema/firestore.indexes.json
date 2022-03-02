@@ -1,6 +1,20 @@
 {
   "indexes": [
     {
+      "collectionGroup": "topup_transaction",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "cash_agent",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_time",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "merchant_transaction",
       "queryScope": "COLLECTION",
       "fields": [
@@ -28,20 +42,6 @@
         },
         {
           "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "created_time",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "merchant_transaction",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "merchant",
           "order": "ASCENDING"
         },
         {
