@@ -13,7 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'homepage/homepage_widget.dart';
-import 'transaction/transaction_widget.dart';
 import 'profile/profile_widget.dart';
 
 void main() async {
@@ -120,7 +119,6 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'Homepage': HomepageWidget(),
-      'Transaction': TransactionWidget(),
       'Profile': ProfileWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPage);
@@ -170,32 +168,8 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.ballot,
-                  color: currentIndex == 1
-                      ? FlutterFlowTheme.of(context).oxfordBlue
-                      : Color(0x3F171717),
-                  size: 24,
-                ),
-                Text(
-                  'Transaction',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    color: currentIndex == 1
-                        ? FlutterFlowTheme.of(context).oxfordBlue
-                        : Color(0x3F171717),
-                    fontSize: 11.0,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          FloatingNavbarItem(
-            customWidget: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
                   Icons.account_circle,
-                  color: currentIndex == 2
+                  color: currentIndex == 1
                       ? FlutterFlowTheme.of(context).oxfordBlue
                       : Color(0x3F171717),
                   size: 24,
@@ -204,7 +178,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   'Profile',
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: currentIndex == 2
+                    color: currentIndex == 1
                         ? FlutterFlowTheme.of(context).oxfordBlue
                         : Color(0x3F171717),
                     fontSize: 11.0,
