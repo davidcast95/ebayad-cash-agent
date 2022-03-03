@@ -6,8 +6,6 @@ import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../history/history_widget.dart';
-import '../history_merchant/history_merchant_widget.dart';
-import '../input_payment/input_payment_widget.dart';
 import '../pay_to_merchant/pay_to_merchant_widget.dart';
 import '../pulsa/pulsa_widget.dart';
 import '../topup/topup_widget.dart';
@@ -1009,104 +1007,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      if (functions.isUserHasMerchantRole(
-                                              currentUserDocument?.roles
-                                                  ?.toList()) ??
-                                          true)
-                                        Expanded(
-                                          child: InkWell(
-                                            onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      InputPaymentWidget(),
-                                                ),
-                                              );
-                                            },
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                FaIcon(
-                                                  FontAwesomeIcons.cashRegister,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .oxfordBlue,
-                                                  size: 20,
-                                                ),
-                                                Text(
-                                                  'Input Payment',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Source Sans Pro',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .oxfordBlue,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      if (functions.isUserHasMerchantRole(
-                                              currentUserDocument?.roles
-                                                  ?.toList()) ??
-                                          true)
-                                        Expanded(
-                                          child: InkWell(
-                                            onTap: () async {
-                                              await Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                  builder: (context) =>
-                                                      HistoryMerchantWidget(),
-                                                ),
-                                              );
-                                            },
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 0, 0, 4),
-                                                  child: Icon(
-                                                    Icons.assignment_rounded,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .oxfordBlue,
-                                                    size: 24,
-                                                  ),
-                                                ),
-                                                Text(
-                                                  'Order',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Source Sans Pro',
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .oxfordBlue,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
                                       if (functions.isUserHasCashAgentRole(
                                               currentUserDocument?.roles
                                                   ?.toList()) ??
@@ -1299,7 +1199,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(15, 0, 15, 0),
                                               child: Text(
-                                                'Cash agent',
+                                                'User',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
@@ -1317,7 +1217,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   .fromSTEB(15, 0, 15, 12),
                                               child: Text(
                                                 listViewTopupTransactionRecord
-                                                    .cashAgentDisplayName,
+                                                    .userDisplayName,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1

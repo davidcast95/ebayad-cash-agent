@@ -85,16 +85,16 @@ class _SuccessTopupWidgetState extends State<SuccessTopupWidget> {
                           ),
                           Container(
                             width: double.infinity,
-                            height: 50,
+                            height: 30,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).platinum,
+                              color: FlutterFlowTheme.of(context).oxfordBlue,
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Align(
                               alignment: AlignmentDirectional(-1, 0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 0),
+                                    12, 0, 20, 0),
                                 child: Text(
                                   'Cash Agent',
                                   style: FlutterFlowTheme.of(context)
@@ -102,7 +102,7 @@ class _SuccessTopupWidgetState extends State<SuccessTopupWidget> {
                                       .override(
                                         fontFamily: 'Source Sans Pro',
                                         color: FlutterFlowTheme.of(context)
-                                            .oxfordBlue,
+                                            .platinum,
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
@@ -133,16 +133,16 @@ class _SuccessTopupWidgetState extends State<SuccessTopupWidget> {
                           ),
                           Container(
                             width: double.infinity,
-                            height: 50,
+                            height: 30,
                             decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context).platinum,
+                              color: FlutterFlowTheme.of(context).oxfordBlue,
                               borderRadius: BorderRadius.circular(4),
                             ),
                             child: Align(
                               alignment: AlignmentDirectional(-1, 0),
                               child: Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 0),
+                                    12, 0, 20, 0),
                                 child: Text(
                                   '₱ ${widget.topupAmount.toString()}',
                                   style: FlutterFlowTheme.of(context)
@@ -187,7 +187,7 @@ class _SuccessTopupWidgetState extends State<SuccessTopupWidget> {
                               Align(
                                 alignment: AlignmentDirectional(0, 0),
                                 child: Text(
-                                  'Pay bills',
+                                  'Back to homepage',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(

@@ -347,7 +347,7 @@ class _TransactionDetaillTopupWidgetState
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Your Balance',
+                                    'Wallet Balance',
                                     textAlign: TextAlign.end,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -439,7 +439,7 @@ class _TransactionDetaillTopupWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  'Paid amount',
+                                  'Amount to pay',
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
