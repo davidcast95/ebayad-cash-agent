@@ -369,6 +369,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
                             child: InkWell(
                               onTap: () async {
+                                await signOut();
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
